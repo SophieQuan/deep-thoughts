@@ -1,0 +1,26 @@
+{
+  "name": "deep-thoughts",
+  "version": "1.0.0",
+  "description": "A social media application called \"Deep Thoughts,\" where users can create an account, post their thoughts for others to see, and interact with other users through these thoughts. The app uses MongoDB, Express, React, and Node all together.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SophieQuan/deep-thoughts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SophieQuan/deep-thoughts/issues"
+  },
+  "homepage": "https://github.com/SophieQuan/deep-thoughts#readme",
+  "devDependencies": {
+    "concurrently": "^7.2.0"
+  }
+}
