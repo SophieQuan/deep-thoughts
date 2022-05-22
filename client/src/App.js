@@ -4,7 +4,7 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  createHttpLink
+  createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
@@ -19,7 +19,7 @@ import Signup from "./pages/Signup";
 import NoMatch from "./pages/NoMatch";
 
 const httpLink = createHttpLink({
-  uri: "/graphql"
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -27,14 +27,14 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : ""
-    }
+      authorization: token ? `Bearer ${token}` : "",
+    },
   };
 });
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 });
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile/:username" element={<Profile />} />
               <Route path="/thought/:id" element={<SingleThought />} />
               <Route path="*" element={<NoMatch />} />
             </Routes>

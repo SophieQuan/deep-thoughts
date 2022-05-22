@@ -10,7 +10,7 @@ import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { ADD_FRIEND } from "../utils/mutations";
 import Auth from "../utils/auth";
 
-const Profile = props => {
+const Profile = () => {
   const { username: userParam } = useParams();
   const [addFriend] = useMutation(ADD_FRIEND);
 

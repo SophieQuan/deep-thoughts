@@ -11,3 +11,7 @@ A social media application called "Deep Thoughts," where users can create an acc
 - A user can react, or reply, to a thought.
 
 - A user can befriend other users.
+
+# Deployed URL
+
+    https://deep-thoughts-module21.herokuapp.com/
